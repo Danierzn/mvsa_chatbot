@@ -2,13 +2,11 @@ import discord
 from discord.ext import commands
 import logging
 from dotenv import load_dotenv
-import os, re, datetime
-
+import os, re, datetime, time
 # Load environment variables from the .env file
 load_dotenv()
 
 token = os.getenv('DISCORD_TOKEN')
-
 if not token:
     raise ValueError("No DISCORD_TOKEN found in environment variables")
 
@@ -71,13 +69,12 @@ async def on_member_join(member):
 # bot event - on message
 @bot.event
 async def on_message(message):
-    if message.author == bot.user:
+    if message.author == bot.user or not isinstance(message.author, discord.Member):
         return
-
-    # Put response logic here
+    
+    # Process commands here *implement later*
 
     await bot.process_commands(message)
-
 
 
 # Run bot
