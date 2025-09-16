@@ -3,6 +3,8 @@ from discord.ext import commands
 import logging
 from dotenv import load_dotenv
 import os, re, datetime, time
+from flask import Flask
+import threading
 # Load environment variables from the .env file
 load_dotenv()
 
@@ -162,6 +164,23 @@ async def on_message(message):
 
 
 # Adding commands
+
+# Add flask port
+
+
+# Flask dummy server to satisfy Render
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+def run_flask():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
+# Run Flask in a separate thread
+threading.Thread(target=run_flask).start()
 
 
 # Run bot
