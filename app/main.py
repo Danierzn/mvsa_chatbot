@@ -66,7 +66,7 @@ async def on_ready():
 # bot event - on member join
 @bot.event
 async def on_member_join(member):
-    await member.send(f"Welcome to MVSA's official server {member.name}! Please refer to the rules channel and enjoy your stay!")
+    await member.send(f"WHello, I am MVSA's chatbot currently in development. Welcome to MVSA's official server {member.name}! Please refer to the rules channel and enjoy your stay! If there are any questions, feel free to reach out to the executive members found in our team directory channel on the server.")
 
 # bot event - on message
 import discord
@@ -149,16 +149,16 @@ async def on_message(message):
         return
 
 
-# Instagram webhook role mention logic
-    target_channel_id = 1417199462853378259
-    target_webhook_name = "MVSA Bot"   # The webhook name you see in Discord
-    role_id = 1417292218296700988
+# # Instagram webhook role mention logic
+#     target_channel_id = 1417199462853378259
+#     target_webhook_name = "MVSA Bot"   # The webhook name you see in Discord
+#     role_id = 1417292218296700988
 
-    # Check if it's in the target channel and from the webhook
-    if message.channel.id == target_channel_id and message.webhook_id is not None:
-        if message.author.name == target_webhook_name:   # author.name will be "MVSA Bot"
-            role_mention = f"<@&{role_id}>"
-            await message.channel.send(role_mention)
+#     # Check if it's in the target channel and from the webhook
+#     if message.channel.id == target_channel_id and message.webhook_id is not None:
+#         if message.author.name == target_webhook_name:   # author.name will be "MVSA Bot"
+#             role_mention = f"<@&{role_id}>"
+#            await message.channel.send(role_mention)
 
     await bot.process_commands(message)
 
