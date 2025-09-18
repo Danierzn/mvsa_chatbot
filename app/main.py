@@ -66,7 +66,7 @@ async def on_ready():
 # bot event - on member join
 @bot.event
 async def on_member_join(member):
-    await member.send(f"WHello, I am MVSA's chatbot currently in development. Welcome to MVSA's official server {member.name}! Please refer to the rules channel and enjoy your stay! If there are any questions, feel free to reach out to the executive members found in our team directory channel on the server.")
+    await member.send(f"Hello, I am MVSA's chatbot currently in development. Welcome to MVSA's official server {member.name}! Please refer to the rules channel and enjoy your stay! If there are any questions, feel free to reach out to the executive members found in our team directory channel on the server.")
 
 # bot event - on message
 import discord
